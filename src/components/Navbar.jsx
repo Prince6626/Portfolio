@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
-  { label: 'Services', href: '#services' },
+  // { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'About', href: '#about' },
@@ -49,7 +49,7 @@ export default function Navbar() {
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 right-0 z-[60] px-8 py-5 flex items-center justify-between"
+        className="absolute top-0 left-0 right-0 z-[60] px-8 py-5 flex items-center justify-between"
       >
         {/* Logo — only when in hero and menu is closed */}
         <AnimatePresence>
@@ -64,7 +64,7 @@ export default function Navbar() {
               className="font-bold text-lg tracking-wide text-black"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
-              PP<span className="text-black/50">.</span>
+              PS<span className="text-black/50">.</span>
             </motion.a>
           )}
         </AnimatePresence>
@@ -94,34 +94,20 @@ export default function Navbar() {
           )}
         </AnimatePresence>
 
-        {/* Desktop CTA "Hire Me" — only in hero */}
-        <AnimatePresence>
-          {inHero && !menuOpen && (
-            <motion.a
-              key="hire-me"
-              href="#contact"
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.25 }}
-              className="hidden md:block text-sm border px-5 py-2 rounded-full transition-all duration-300 tracking-wide border-black/30 text-black hover:bg-black hover:text-white"
-            >
-              Hire Me
-            </motion.a>
-          )}
-        </AnimatePresence>
 
-        {/* 
-          Circular Hamburger Button:
-          - On desktop: only visible when NOT in hero (or when menu is open)
-          - On mobile: always visible (md:hidden hides the desktop nav, not the hamburger)
-        */}
+      </motion.nav>
+
+      {/* 
+        Circular Hamburger Button Wrapper:
+        - Fixed position so it floats when scrolling down, even though links scroll away.
+      */}
+      <div className="fixed top-0 left-0 right-0 z-[70] px-8 py-5 pointer-events-none flex items-center justify-end">
         <motion.button
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           className={`
             w-14 h-14 rounded-full border flex items-center justify-center
-            transition-colors duration-300 cursor-pointer ml-auto
+            transition-colors duration-300 cursor-pointer ml-auto pointer-events-auto
             ${burgerBg}
             ${inHero && !menuOpen ? 'md:hidden' : ''}
           `}
@@ -139,7 +125,7 @@ export default function Navbar() {
             </div>
           )}
         </motion.button>
-      </motion.nav>
+      </div>
 
       {/* Full-screen Overlay Menu */}
       <AnimatePresence>
@@ -200,8 +186,8 @@ export default function Navbar() {
 
               <div className="flex items-center gap-8">
                 {[
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prince-patel-b95b43289' },
-                  { label: 'Github', href: 'https://github.com/princepatel6626' },
+                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/princepatelgecvgecictdte/' },
+                  { label: 'Github', href: 'https://github.com/Prince6626' },
                 ].map(({ label, href }) => (
                   <a
                     key={label}

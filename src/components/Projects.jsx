@@ -9,28 +9,73 @@ const projects = [
     description:
       'Full-stack developer platform for connecting and networking. Built with the MERN stack featuring secure JWT & bcrypt authentication, user profiles, connection requests, real-time chat, and RESTful APIs.',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'bcrypt'],
-    github: 'https://github.com/princepatel6626',
-    live: '#',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop',
+    tag: 'Full-Stack Platform',
+    githubFrontend: 'https://github.com/Prince6626/devConnect-fe.git',
+    githubBackend: 'https://github.com/Prince6626/devConnect-be.git',
+    live: 'https://dev-connect-fe.vercel.app/',
+    image: '/projects/devConnect2.png',
     links: [
       { label: 'Frontend Repo', href: 'https://github.com/princepatel6626' },
       { label: 'Backend Repo', href: 'https://github.com/princepatel6626' },
-      { label: 'Live Preview', href: '#' },
+      { label: 'Live Preview', href: 'https://dev-connect-fe.vercel.app/' },
     ],
   },
   {
     id: 2,
     title: 'CareNavigator',
+    isHackathon: true,
     description:
       'AI-powered healthcare decision support system using the Gemini API to analyze patient symptoms, recommend disease-specific hospitals & medical specialists, and predict treatment costs.',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Gemini API', 'REST APIs'],
-    github: 'https://github.com/princepatel6626',
-    live: '#',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop',
+    tag: 'AI Healthcare',
+    github: 'https://github.com/Prince6626/CareNavigator.git',
+    live: 'https://care-navigator-client.vercel.app/',
+    image: '/projects/care.png',
     links: [
       { label: 'GitHub Repo', href: 'https://github.com/princepatel6626' },
     ],
   },
+  {
+  id: 3,
+  title: 'EduSafe',
+  isHackathon: true,
+  description:
+    'Role-based disaster awareness and safety platform where students access learning modules with videos, notes, and quizzes, report incidents with live location, and share experiences. Teachers monitor reports in real time while admins manage modules and quizzes.',
+  tags: ['React', 'Node.js', 'JWT', 'Tailwind CSS', 'Maps API', 'REST API'],
+  tag: 'Safety Platform',
+  github: 'https://github.com/Prince6626/SIH-2025-2.O.git',
+  live: 'https://sih-frontend-one-mu.vercel.app/',
+  image: '/projects/EduSafe.png',
+  links: [
+    { label: 'GitHub Repo', href: 'https://github.com/Prince6626/SIH-2025-2.O.git' },
+    { label: 'Live Preview', href: 'https://sih-frontend-one-mu.vercel.app/' },
+  ],
+},
+{
+  id: 4,
+  title: 'ScamShield',
+  description:
+    'AI-powered job and internship scam detection platform that analyzes text or screenshots of job offers using OCR and machine learning. The system predicts scam probability, classifies risk levels, and generates explainable AI insights with Gemini to highlight scam signals, safety tips, and verification steps for students.',
+  tags: [
+    'React',
+    'Node.js',
+    'Express',
+    'FastAPI',
+    'Python',
+    'scikit-learn',
+    'EasyOCR',
+    'Gemini AI',
+    'Docker',
+    'Tailwind CSS'
+  ],
+  tag: 'AI Scam Detection',
+  github: 'https://github.com/Prince6626/ScamShield.git',
+  // live: '',
+  image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1200&auto=format&fit=crop',
+  links: [
+    { label: 'GitHub Repo', href: 'https://github.com/Prince6626/ScamShield.git' }
+  ],
+}
 ];
 
 export default function Projects() {
@@ -60,7 +105,7 @@ export default function Projects() {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
-            Selected Works <span className="text-[#333]">/</span>
+            Featured Projects <span className="text-[#333]">/</span>
           </motion.h2>
         </div>
 
@@ -108,19 +153,96 @@ export default function Projects() {
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
                     
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
-                    
-                    {/* Hover link pill */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100">
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white text-black px-6 py-3 rounded-full font-medium text-sm flex items-center gap-2 hover:bg-[#eee] transition-colors"
-                      >
-                        Visit Project <ArrowUpRight size={16} />
-                      </a>
+                    {/* Cinematic gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out" />
+
+                    {/* Film grain */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-[0.12] transition-opacity duration-700 mix-blend-overlay pointer-events-none"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+                      }}
+                    />
+
+                    {/* Bottom text links — slide up */}
+                    <div className="absolute bottom-0 left-0 right-0 z-20 px-6 pb-7 translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+
+                      {/* Tag label */}
+                      <p className="text-[9px] tracking-[0.3em] uppercase text-white/35 mb-4 font-medium">
+                        {project.tag ?? "Project"}
+                      </p>
+
+                      {/* Links row */}
+                      <div className="flex items-center gap-6">
+
+                        {/* Visit Project */}
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/link flex items-end gap-1.5 text-white text-sm font-semibold tracking-wide relative"
+                        >
+                          <span className="relative">
+                            View Project
+                            {/* Underline that grows left to right */}
+                            <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-white group-hover/link:w-full transition-all duration-300 ease-out" />
+                          </span>
+                          {/* Arrow that drifts up-right on hover */}
+                          <ArrowUpRight
+                            size={15}
+                            strokeWidth={2}
+                            className="mb-0.5 translate-x-0 translate-y-0 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300"
+                          />
+                        </a>
+
+                        {/* Thin separator */}
+                        <span className="h-3 w-px bg-white/20" />
+
+                        {/* GitHub(s) */}
+                        {project.githubFrontend && project.githubBackend ? (
+                          <>
+                            <a
+                              href={project.githubFrontend}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/repo flex items-end gap-1 text-white/50 text-[13px] font-medium tracking-wide hover:text-white/80 transition-colors duration-300 relative"
+                            >
+                              <span className="relative">
+                                Frontend
+                                <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-white/60 group-hover/repo:w-full transition-all duration-300 ease-out" />
+                              </span>
+                              <Github size={12} className="mb-0.5" />
+                            </a>
+                            <span className="w-1 h-1 rounded-full bg-white/10 mx-[-10px]" />
+                            <a
+                              href={project.githubBackend}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/repo flex items-end gap-1 text-white/50 text-[13px] font-medium tracking-wide hover:text-white/80 transition-colors duration-300 relative"
+                            >
+                              <span className="relative">
+                                Backend
+                                <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-white/60 group-hover/repo:w-full transition-all duration-300 ease-out" />
+                              </span>
+                              <Github size={12} className="mb-0.5" />
+                            </a>
+                          </>
+                        ) : (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/repo flex items-end gap-1.5 text-white/50 text-sm font-medium tracking-wide hover:text-white/80 transition-colors duration-300 relative"
+                          >
+                            <span className="relative">
+                              GitHub
+                              <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-white/60 group-hover/repo:w-full transition-all duration-300 ease-out" />
+                            </span>
+                            <Github size={13} strokeWidth={1.8} className="mb-0.5" />
+                          </a>
+                        )}
+
+                      </div>
                     </div>
                   </motion.div>
 
@@ -133,12 +255,19 @@ export default function Projects() {
                     className="mt-8 flex flex-col gap-4"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <h4 
-                        className="text-3xl md:text-4xl font-bold text-white tracking-tight"
-                        style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-                      >
-                        {project.title}
-                      </h4>
+                      <div className="flex flex-col gap-2">
+                        {project.isHackathon && (
+                          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white bg-white/10 w-fit px-3 py-1 rounded-full border border-white/20">
+                            Hackathon Project
+                          </span>
+                        )}
+                        <h4 
+                          className="text-3xl md:text-4xl font-bold text-white tracking-tight"
+                          style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                        >
+                          {project.title}
+                        </h4>
+                      </div>
                       <a
                         href={project.github}
                         target="_blank"
@@ -153,31 +282,6 @@ export default function Projects() {
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {project.tags.map((tag) => (
-                        <span 
-                          key={tag} 
-                          className="text-xs font-medium uppercase tracking-wider text-[#aaa] border border-[#2a2a2a] bg-[#111] px-3 py-1.5 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Project links */}
-                    <div className="flex flex-wrap gap-3 mt-2">
-                      {project.links.map(({ label, href }) => (
-                        <a
-                          key={label}
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[#888] hover:text-white border-b border-[#333] hover:border-white pb-0.5 transition-all duration-300"
-                        >
-                          {label} <ArrowUpRight size={12} />
-                        </a>
-                      ))}
-                    </div>
                   </motion.div>
 
                 </div>
@@ -195,7 +299,7 @@ export default function Projects() {
           className="mt-24 md:mt-32 flex justify-center w-full"
         >
           <a
-            href="https://github.com/princepatel6626"
+            href="https://github.com/Prince6626"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-[#111] hover:bg-white text-white hover:text-black border border-[#333] hover:border-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300"

@@ -29,8 +29,7 @@ const toolsSkills = [
   { name: 'Git & GitHub', icon: '🐙' },
   { name: 'VS Code', icon: '🔷' },
   { name: 'Postman', icon: '📮' },
-  { name: 'npm / pnpm', icon: '📦' },
-  { name: 'Figma', icon: '🎨' },
+  { name: 'npm / pnpm', icon: '📦' }
 ];
 
 const softSkills = [

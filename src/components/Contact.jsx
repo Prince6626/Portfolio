@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Github, Linkedin, Mail, Send, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
 
 const socials = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/Prince6626', text: 'github.com/princepatel6626' },
@@ -11,23 +11,12 @@ const socials = [
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
-
-  const handleChange = e => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
-    setForm({ name: '', email: '', message: '' });
-  };
 
   return (
     <section id="contact" className="py-28 px-8 md:px-20 lg:px-32 border-t border-[#111]">
-      <div className="max-w-6xl mx-auto">
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left */}
+      <div className="max-w-7xl mx-auto">
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-start">
+          {/* Left: Heading & Description */}
           <div>
             <motion.span
               initial={{ opacity: 0 }}
@@ -41,110 +30,59 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6"
+              className="text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase mb-8"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
-              Let's Work
-              <br />
-              Together
+              Let’s Connect
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.7 }}
-              className="text-[#666] leading-relaxed mb-12"
+              className="text-[#888] text-xl leading-relaxed max-w-lg"
             >
-              Have a project in mind? Open to discussing freelance opportunities, 
-              collaborations, or full-time roles. Just reach out — I'd love to connect.
+              Have a project idea or collaboration in mind? I'm always open to discussing interesting projects and new opportunities. Let's connect.
             </motion.p>
-
-            {/* Socials */}
-            <div className="flex flex-col gap-4">
-              {socials.map(({ icon: Icon, label, href, text }, i) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-                  className="group flex items-center gap-4 border border-[#222] rounded-xl px-5 py-4 hover:border-white/30 hover:bg-white/[0.02] transition-all duration-300"
-                >
-                  <div className="w-9 h-9 border border-[#333] rounded-lg flex items-center justify-center group-hover:border-white/30 transition-colors duration-300">
-                    <Icon size={16} className="text-[#888] group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-[#555] uppercase tracking-widest mb-0.5">{label}</div>
-                    <div className="text-sm text-[#aaa] group-hover:text-white transition-colors duration-300">{text}</div>
-                  </div>
-                  <ArrowRight size={14} className="ml-auto text-[#333] group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
-                </motion.a>
-              ))}
-            </div>
           </div>
 
-          {/* Right — Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div>
-                <label className="text-xs tracking-widest uppercase text-[#555] mb-2 block">Name</label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your name"
-                  className="w-full bg-transparent border border-[#222] text-white placeholder-[#444] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-white/40 transition-colors duration-300"
-                />
-              </div>
-              <div>
-                <label className="text-xs tracking-widest uppercase text-[#555] mb-2 block">Email</label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="your@email.com"
-                  className="w-full bg-transparent border border-[#222] text-white placeholder-[#444] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-white/40 transition-colors duration-300"
-                />
-              </div>
-              <div>
-                <label className="text-xs tracking-widest uppercase text-[#555] mb-2 block">Message</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  placeholder="Tell me about your project..."
-                  className="w-full bg-transparent border border-[#222] text-white placeholder-[#444] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-white/40 transition-colors duration-300 resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                id="contact-submit"
-                className="group flex items-center justify-center gap-3 bg-white text-black font-semibold text-sm px-8 py-4 rounded-full hover:bg-[#e5e5e5] transition-all duration-300 mt-2"
+          {/* Right: Contact Boxes */}
+          <div className="flex flex-col gap-4 w-full">
+            {socials.map(({ icon: Icon, label, href, text }, i) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 + i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 hover:border-[#444] transition-all duration-300 flex items-center group w-full"
               >
-                {sent ? (
-                  'Message Sent!'
-                ) : (
-                  <>
-                    Send Message
-                    <Send size={15} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  </>
-                )}
-              </button>
-            </form>
-          </motion.div>
+                {/* Icon Box */}
+                <div className="w-12 h-12 md:w-14 md:h-14 border border-[#222] rounded-xl flex items-center justify-center bg-[#050505] group-hover:border-[#444] transition-colors shrink-0">
+                  <Icon size={20} className="text-[#888] group-hover:text-white transition-colors" />
+                </div>
+
+                {/* Text Content */}
+                <div className="ml-6 flex flex-col flex-1 min-w-0">
+                  <span className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-[#555] mb-1 font-bold">
+                    {label}
+                  </span>
+                  <div
+                    className="text-lg md:text-xl font-bold text-[#f5f5f5] tracking-tight truncate"
+                    style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                  >
+                    {text}
+                  </div>
+                </div>
+
+                {/* Right Arrow */}
+                <div className="ml-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
+                  <ArrowRight size={20} className="text-[#888] group-hover:text-white" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

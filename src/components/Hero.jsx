@@ -10,7 +10,7 @@ export default function Hero() {
     >
       {/* Top Tagline for Desktop */}
       <div className="hidden md:flex justify-between items-center w-full mb-10 text-sm font-medium text-black/60">
-        <p>Full-Stack Developer &amp; AI Explorer</p>
+        <p>Full-Stack Developer | AI Explorer</p>
       </div>
 
       {/* Big Name */}
@@ -21,7 +21,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-[clamp(4rem,13vw,16rem)] leading-[0.85] font-black tracking-tighter uppercase whitespace-nowrap text-center text-[#111]"
         >
-          Prince Patel
+          Prince  Patel
         </motion.h1>
       </div>
 
@@ -41,7 +41,7 @@ export default function Hero() {
           </svg>
           
           <p className="text-xl md:text-2xl text-black/80 leading-snug font-medium">
-            Engineering student building fast, modern web apps — passionate about MERN stack &amp; AI-driven solutions.
+            Engineering student building modern web applications — focused on the MERN stack, AI exploration, and real-world problem solving.
           </p>
           
           <a
@@ -73,9 +73,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="w-full md:w-[30%] flex flex-col items-start md:items-end text-left md:text-right"
         >
-          <p className="text-sm font-bold tracking-[0.2em] uppercase text-black/50 mb-2">Available for work</p>
-          <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter text-[#2a2a2a]">
-            Mar'26
+          <p className="text-sm font-bold tracking-[0.2em] uppercase text-black/50 mb-2">Actively Building</p>
+          <h2 className="text-6xl md:text-7xl lg:text-4xl font-bold uppercase tracking-tighter text-[#2a2a2a]">
+            Modern Web Apps
           </h2>
         </motion.div>
 

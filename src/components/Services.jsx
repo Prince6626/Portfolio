@@ -3,39 +3,39 @@ import { motion, useInView } from 'framer-motion';
 
 const services = [
   {
-    number: '01',
-    title: 'Full-Stack Development',
-    description:
-      'From frontend interactions to backend APIs, I build complete web solutions. I work with modern stacks to deliver apps that are scalable, maintainable, and ready for real-world users.',
-    items: [
-      'React, Node.js, Express.js',
-      'REST APIs, Firebase, Docker',
-      'Git, GitHub, Postman',
-    ],
-    bg: '#000000ff',
-  },
+  number: '01',
+  title: 'Full-Stack Development',
+  description:
+    'Building modern web applications using the MERN stack with focus on clean architecture, scalable APIs, and real-world usability.',
+  items: [
+    'React, Node.js, Express.js',
+    'MongoDB & REST APIs',
+    'Authentication & CRUD systems'
+  ],
+  bg: '#000000ff',
+},
   {
     number: '02',
-    title: 'UI/UX & Frontend',
+    title: 'Data Structures & Algorithms',
     description:
-      'Pixel-perfect, responsive interfaces with smooth animations and performance-first thinking. Every interaction is intentional.',
+      'Continuously improving my problem-solving skills through DSA practice and understanding core computer science concepts.',
     items: [
-      'Responsive & Accessible Design',
-      'Tailwind CSS & Component Systems',
-      'Framer Motion Animations',
-    ],
+  'Data Structures & Algorithms',
+  'LeetCode / Coding Practice',
+  'Logical Problem Solving'
+],
     bg: '#000000ff',
   },
   {
     number: '03',
-    title: 'Optimization',
+    title: 'Hackathons & Real-World Projects',
     description:
-      'I focus on building systems that stay reliable as things scale. Core computer science principles applied to keep applications fast, stable, and future-ready.',
-    items: [
-      'Data Structures & Algorithms',
-      'DBMS, OOP, OS Fundamentals',
-      'Clean code & architecture',
-    ],
+    'I enjoy building products under time constraints and collaborating with teams to solve real problems through hackathons and project-based learning.',
+  items: [
+    'Rapid prototyping',
+    'Team collaboration',
+    'Building MVPs quickly'
+  ],
     bg: '#000000ff',
   },
 ];
@@ -137,7 +137,7 @@ export default function Services() {
             className="text-4xl md:text-5xl font-bold text-white tracking-tight"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
-            What I Do
+            Areas of Focus
           </motion.h2>
         </div>
 

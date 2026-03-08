@@ -41,20 +41,24 @@ export default function About() {
               transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#888] text-xl leading-relaxed mb-6"
             >
-              I'm <span className="text-white font-medium">Prince Patel</span>, an enthusiastic and 
-              self-driven engineering student with a strong foundation in Data Structures &amp; Algorithms 
-              and Full-Stack Web Development.
+              I'm <span className="text-white font-medium">Prince Patel</span>, an engineering student passionate about Full-Stack Web Development and Data Structures & Algorithms. I enjoy building modern web applications and solving real-world problems through technology.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.25, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[#888] text-lg leading-relaxed mb-6"
+            >
+              Alongside full-stack development, I actively explore Artificial Intelligence concepts, participate in hackathons, and build practical projects to improve my technical and problem-solving skills.
+            </motion.p>
+            {/* <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#888] text-lg leading-relaxed mb-10"
             >
-              Actively exploring Artificial Intelligence concepts alongside full-stack development. 
-              Passionate about learning emerging technologies and solving real-world problems that 
-              make a meaningful impact.
-            </motion.p>
+              My goal is to grow as a developer by creating meaningful products, learning emerging technologies, and contributing to impactful solutions.
+            </motion.p> */}
 
             {/* Contact Info */}
             <motion.div
@@ -91,7 +95,7 @@ export default function About() {
             >
               {[
                 { label: 'Focus', value: 'Software Development & Problem Solving', icon: Target },
-                { label: 'Currently', value: 'Building, learning, shipping', icon: Sparkles },
+                { label: 'Currently', value: 'Building full-stack projects, practicing DSA, and exploring AI technologies', icon: Sparkles },
               ].map(stat => {
                 const Icon = stat.icon;
                 return (
@@ -132,7 +136,7 @@ export default function About() {
                 className="text-xl font-bold text-white tracking-tight mb-1"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                B.E. in Information &amp; Communication Technology
+                B.E. - Information &amp; Communication Technology
               </h3>
               <p className="text-[#666] text-sm mb-3">Vishwakarma Government Engineering College, Ahmedabad (GTU)</p>
               <div className="flex items-center justify-between">

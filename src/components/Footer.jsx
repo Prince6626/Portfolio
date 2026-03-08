@@ -10,14 +10,14 @@ export default function Footer() {
           className="text-[#555] text-sm"
           style={{ fontFamily: 'Space Grotesk, sans-serif' }}
         >
-          © 2026 <span className="text-white font-medium">Prince Patel</span>. Built with React &amp; Tailwind CSS.
+          © 2026 <span className="text-white font-medium">Prince Patel</span>.
         </span>
 
         {/* Social icons */}
         <div className="flex items-center gap-4">
           {[
-            { icon: Github, href: 'https://github.com/princepatel6626', label: 'GitHub' },
-            { icon: Linkedin, href: 'https://www.linkedin.com/in/prince-patel-b95b43289', label: 'LinkedIn' },
+            { icon: Github, href: 'https://github.com/Prince6626', label: 'GitHub' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/princepatelgecvgecictdte/', label: 'LinkedIn' },
             { icon: Mail, href: 'mailto:princepatel6626@gmail.com', label: 'Email' },
           ].map(({ icon: Icon, href, label }) => (
             <a
