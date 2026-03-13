@@ -40,8 +40,8 @@ const softSkills = [
 ];
 
 const SkillPill = ({ icon, name }) => (
-  <span className="group inline-flex items-center justify-center gap-3 border border-[#222] text-[#ccc] px-6 py-4 rounded-full text-lg md:text-xl font-medium cursor-default hover:border-white/40 hover:text-white hover:bg-white/5 transition-all duration-300 whitespace-nowrap">
-    <span className="text-2xl md:text-3xl grayscale group-hover:grayscale-0 transition-all duration-300">{icon}</span>
+  <span className="group inline-flex items-center justify-center gap-2 md:gap-3 border border-[#222] text-[#ccc] px-4 py-3 md:px-6 md:py-4 rounded-full text-sm md:text-lg font-medium cursor-default hover:border-white/40 hover:text-white hover:bg-white/5 transition-all duration-300 whitespace-nowrap">
+    <span className="text-lg sm:text-2xl md:text-3xl grayscale group-hover:grayscale-0 transition-all duration-300">{icon}</span>
     {name}
   </span>
 );
@@ -51,7 +51,7 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="skills" className="py-32 border-t border-[#111] overflow-hidden">
+    <section id="skills" className="py-16 md:py-32 border-t border-[#111] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 mb-16">
         <div ref={ref}>
           <motion.span
@@ -66,7 +66,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase mb-6"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
             Skills &amp; Tech <span className="text-[#333]">/</span>

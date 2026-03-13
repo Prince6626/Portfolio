@@ -7,9 +7,9 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="about" className="py-32 px-6 md:px-12 lg:px-20 border-t border-[#111]">
+    <section id="about" className="py-16 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-[#111]">
       <div className="max-w-7xl mx-auto">
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start">
           {/* Left: label + text */}
           <div>
             <motion.span
@@ -24,7 +24,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase mb-8"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase mb-8"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               Building with{' '}
@@ -39,9 +39,9 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[#888] text-xl leading-relaxed mb-6"
+              className="text-[#888] text-base sm:text-xl leading-relaxed mb-6"
             >
-              I'm <span className="text-white font-medium">Prince Patel</span>, an engineering student passionate about Full-Stack Web Development and Data Structures & Algorithms. I enjoy building modern web applications and solving real-world problems through technology.
+              I'm <span className="text-white font-medium">Prince Patel</span>, an engineering student passionate about Full-Stack Web Development and Data Structures &amp; Algorithms. I enjoy building modern web applications and solving real-world problems through technology.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function About() {
                 <div key={text} className="flex items-center gap-3 text-[#666]">
                   <Icon size={15} className="text-[#555] flex-shrink-0" />
                   {href ? (
-                    <a href={href} className="text-sm hover:text-white transition-colors duration-300">{text}</a>
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors duration-300">{text}</a>
                   ) : (
                     <span className="text-sm">{text}</span>
                   )}

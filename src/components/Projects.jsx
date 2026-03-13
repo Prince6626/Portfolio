@@ -92,17 +92,17 @@ export default function Projects() {
     <section 
       id="projects" 
       ref={containerRef}
-      className="bg-[#050505] min-h-screen py-32 px-6 md:px-12 lg:px-20 border-t border-[#111]"
+      className="bg-[#050505] min-h-screen py-16 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-[#111]"
     >
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div ref={headerRef} className="mb-32">
+        <div ref={headerRef} className="mb-12 md:mb-32">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter uppercase"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
             Featured Projects <span className="text-[#333]">/</span>
@@ -110,13 +110,13 @@ export default function Projects() {
         </div>
 
         {/* Timeline Projects Container */}
-        <div className="flex flex-col gap-32 relative">
+        <div className="flex flex-col gap-16 md:gap-32 relative">
           {projects.map((project, index) => {
             const number = (index + 1).toString().padStart(2, '0');
             return (
               <div 
                 key={project.id} 
-                className="flex justify-start pt-10 md:pt-40 md:gap-20"
+                className="flex justify-start pt-8 md:pt-40 md:gap-20"
               >
                 {/* Left Sticky Column */}
                 <div className="sticky top-40 self-start max-w-xs md:w-1/3 z-10 hidden md:block">
@@ -138,12 +138,15 @@ export default function Projects() {
                     {number}
                   </h3>
 
-                  {/* Project Image Box */}
                   <motion.div 
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-100px' }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    onClick={() => {
+                      const link = project.live || project.github;
+                      if (link) window.open(link, '_blank');
+                    }}
                     className="group relative rounded-3xl overflow-hidden bg-[#111] border border-[#222] aspect-[4/3] w-full cursor-pointer hover:border-[#444] transition-colors duration-500"
                   >
                     {/* Inner image */}
@@ -296,7 +299,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-24 md:mt-32 flex justify-center w-full"
+          className="mt-16 md:mt-32 flex justify-center w-full"
         >
           <a
             href="https://github.com/Prince6626"

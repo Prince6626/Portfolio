@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -184,22 +185,23 @@ export default function Navbar() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-8">
-                {[
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/princepatelgecvgecictdte/' },
-                  { label: 'Github', href: 'https://github.com/Prince6626' },
-                ].map(({ label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-[#666] hover:text-white tracking-wide transition-colors duration-300"
-                  >
-                    {label}
-                  </a>
-                ))}
-              </div>
+            <div className="flex items-center gap-6">
+              {[
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/in/princepatelgecvgecictdte/', icon: <Linkedin size={16} /> },
+                { label: 'Github', href: 'https://github.com/Prince6626', icon: <Github size={16} /> },
+              ].map(({ label, href, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-[#666] hover:text-white tracking-wide transition-colors duration-300"
+                >
+                  {icon}
+                  {label}
+                </a>
+              ))}
+            </div>
             </motion.div>
           </motion.div>
         )}

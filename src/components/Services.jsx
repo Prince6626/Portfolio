@@ -64,11 +64,11 @@ function StackCard({ service, index }) {
         style={{ backgroundColor: service.bg }}
       >
         {/* Card inner: number on left, content on right */}
-        <div className="flex py-10 md:py-14">
+        <div className="flex py-8 md:py-14">
           {/* Left: number column — sits at far left edge */}
-          <div className="shrink-0 w-32 md:w-48 pl-8 md:pl-12 pt-1">
+          <div className="shrink-0 w-16 sm:w-24 md:w-48 pl-4 sm:pl-8 md:pl-12 pt-1">
             <span
-              className="text-xl md:text-2xl font-light text-[#3a3a3a] tracking-widest"
+              className="text-sm sm:text-xl md:text-2xl font-light text-[#3a3a3a] tracking-widest"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               ({service.number})
@@ -78,13 +78,13 @@ function StackCard({ service, index }) {
           {/* Right: title + description + items */}
           <div className="flex-1 min-w-0">
             <h3
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-none mb-6"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-none mb-4 md:mb-6"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               {service.title}
             </h3>
 
-            <p className="text-[#888] text-sm md:text-base leading-relaxed mb-8 max-w-lg">
+            <p className="text-[#888] text-xs sm:text-sm md:text-base leading-relaxed mb-6 md:mb-8 max-w-lg">
               {service.description}
             </p>
 
@@ -118,7 +118,7 @@ export default function Services() {
   const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
 
   return (
-    <section id="services" className="py-28 px-8 md:px-20 lg:px-32 border-t border-[#111]">
+    <section id="services" className="py-16 md:py-28 px-4 sm:px-8 md:px-20 lg:px-32 border-t border-[#111]">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div ref={headingRef} className="mb-16">

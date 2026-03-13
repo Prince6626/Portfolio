@@ -13,7 +13,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="contact" className="py-28 px-8 md:px-20 lg:px-32 border-t border-[#111]">
+    <section id="contact" className="py-16 md:py-28 px-4 sm:px-8 md:px-20 lg:px-32 border-t border-[#111]">
       <div className="max-w-7xl mx-auto">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-start">
           {/* Left: Heading & Description */}
@@ -30,7 +30,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase mb-8"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase mb-8"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               Let’s Connect
@@ -39,7 +39,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.7 }}
-              className="text-[#888] text-xl leading-relaxed max-w-lg"
+              className="text-[#888] text-base sm:text-xl leading-relaxed max-w-lg"
             >
               Have a project idea or collaboration in mind? I'm always open to discussing interesting projects and new opportunities. Let's connect.
             </motion.p>
