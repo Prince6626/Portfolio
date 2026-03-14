@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import workspaceImage from '../assets/image.png';
+
 
 export default function Hero() {
   return (
@@ -60,7 +62,7 @@ export default function Hero() {
           className="w-full md:w-[35%] flex justify-center aspect-[4/3] md:aspect-auto md:h-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-0 md:top-8 order-1 md:order-2"
         >
           <img 
-            src="/src/assets/image.png" 
+            src={workspaceImage} 
             alt="Workspace" 
             className="w-full md:w-[280px] lg:w-[360px] h-full object-cover rounded-3xl md:rounded-xl grayscale opacity-90 object-center shadow-lg md:shadow-none"
           />
