@@ -60,7 +60,7 @@ export default function Hero() {
           className="w-full md:w-[35%] flex justify-center aspect-[4/3] md:aspect-auto md:h-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-0 md:top-8 order-1 md:order-2"
         >
           <img 
-            src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop" 
+            src="https://img.favpng.com/2/18/11/programmer-coding-programmer-focused-on-coding-at-a-desk-Z4LAUVa0_t.jpg" 
             alt="Workspace" 
             className="w-full md:w-[280px] lg:w-[360px] h-full object-cover rounded-3xl md:rounded-xl grayscale opacity-90 object-center shadow-lg md:shadow-none"
           />
