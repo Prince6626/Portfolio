@@ -15,8 +15,8 @@ const projects = [
     live: 'https://dev-connect-fe.vercel.app/',
     image: '/projects/devConnect2.png',
     links: [
-      { label: 'Frontend Repo', href: 'https://github.com/princepatel6626' },
-      { label: 'Backend Repo', href: 'https://github.com/princepatel6626' },
+      { label: 'Frontend Repo', href: 'https://github.com/Prince6626/devConnect-fe.git' },
+      { label: 'Backend Repo', href: 'https://github.com/Prince6626/devConnect-be.git' },
       { label: 'Live Preview', href: 'https://dev-connect-fe.vercel.app/' },
     ],
   },
