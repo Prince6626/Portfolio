@@ -144,7 +144,7 @@ export default function Projects() {
                     viewport={{ once: true, margin: '-100px' }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => {
-                      const link = project.live || project.github;
+                      const link = project.live || project.github || project.githubFrontend || project.githubBackend;
                       if (link) window.open(link, '_blank');
                     }}
                     className="group relative rounded-3xl overflow-hidden bg-[#111] border border-[#222] aspect-[4/3] w-full cursor-pointer hover:border-[#444] transition-colors duration-500"
@@ -181,6 +181,7 @@ export default function Projects() {
                         {/* Visit Project */}
                         <a
                           href={project.live}
+                          onClick={(e) => e.stopPropagation()}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/link flex items-end gap-1.5 text-white text-sm font-semibold tracking-wide relative"
@@ -206,6 +207,7 @@ export default function Projects() {
                           <>
                             <a
                               href={project.githubFrontend}
+                              onClick={(e) => e.stopPropagation()}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="group/repo flex items-end gap-1 text-white/50 text-[13px] font-medium tracking-wide hover:text-white/80 transition-colors duration-300 relative"
@@ -219,6 +221,7 @@ export default function Projects() {
                             <span className="w-1 h-1 rounded-full bg-white/10 mx-[-10px]" />
                             <a
                               href={project.githubBackend}
+                              onClick={(e) => e.stopPropagation()}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="group/repo flex items-end gap-1 text-white/50 text-[13px] font-medium tracking-wide hover:text-white/80 transition-colors duration-300 relative"
@@ -233,6 +236,7 @@ export default function Projects() {
                         ) : (
                           <a
                             href={project.github}
+                            onClick={(e) => e.stopPropagation()}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group/repo flex items-end gap-1.5 text-white/50 text-sm font-medium tracking-wide hover:text-white/80 transition-colors duration-300 relative"
@@ -272,7 +276,7 @@ export default function Projects() {
                         </h4>
                       </div>
                       <a
-                        href={project.github}
+                        href={project.github || project.githubFrontend || project.githubBackend}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:bg-white hover:text-black hover:border-white transition-all duration-300"
